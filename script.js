@@ -57,7 +57,11 @@ function writePassword() {
 
   passwordText.value = password;
 
+<<<<<<< HEAD
 }
+=======
+}git commit -a -m
+>>>>>>> e18f095 ( updated criteria)
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
