@@ -67,3 +67,61 @@ function determineNumbers(){
           if (numberCheck){ characters+=numberschar; 
         } return numberCheck; 
 }
+
+//Function used to determine whether the user wants to include special characters in the password
+function determineSpecial(){ 
+  specialCheck = confirm("Do you want to include special characters in your password? (Y/N)"); 
+ 
+  if(specialCheck){
+    characters+=symbolsChar 
+  } 
+  return specialCheck;
+
+}
+//Function used to take all the input from the previous functions and generate a password using a random number generator and 
+//the charAt method 
+function generatePassword(){ 
+  determineLength(); 
+  console.log(passwordLength); 
+  determineUppercase(); 
+  console.log(uppercaseCheck); 
+  determineNumbers(); 
+  console.log(numberCheck); 
+  determineSpecial(); 
+  console.log(specialCheck);
+  console.log("this is me char"+characters); 
+  var password = ""; 
+
+  // if (uppercaseCheck && numberCheck && specialCheck){
+  // characters += uppercaseCharacter + numberChar + specialChar; 
+  // }else if (uppercaseCheck && numberCheck){/
+  // characters += uppercaseCheck + numberChar;
+  // }else if (numberCheck && specialCheck){
+  // characters += numberChar + specialChar;
+  // }else if (uppercaseCheck && specialCheck){
+  // characters += uppercaseCheck + specialChar;
+  // }else if (uppercaseCheck){
+  // characters += uppercaseCharacter;
+  // }else if(numberCheck){
+  // characters += numberChar;
+  // }else if(specialCheck){
+  // characters += specialChar;
+  // }
+
+for(var i = 0; i < passwordLength; i++){ 
+  password += characters.charAt(Math.floor(Math.random() * characters.length)); } 
+  return password; 
+} 
+// Write password to the #password input 
+
+function writePassword() { 
+  var password = generatePassword(); 
+  var passwordText = document.querySelector("#password"); 
+
+  passwordText.value = password;
+} 
+function resetText(){ 
+  document.getElementById("password").value = "Your Secure Password";} 
+
+  // Add event listener to generate button 
+  generateBtn.addEventListener("click", writePassword);
