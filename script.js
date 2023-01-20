@@ -23,47 +23,47 @@ var lowercaseChar = "abcdefghijklmnopqrstuvwxyz";
     return passwordLength; 
   }
 
+//Function used to determine whether the user wants to include uppercase characters in the password
+function determineUppercase(){ 
 
-  //CHECK IF THEY SELECTED AT LEAST ONE TYPE OF VARIABLE
+  uppercaseCheck = confirm("Do you want to include uppercase letters in your password? (Y/N)");
 
-  //IF THEY DID, WE'LL RETURN characters
+// uppercaseCheck = uppercaseCheck.toLowerCase(); 
+// if (uppercaseCheck === null || uppercaseCheck === ""){ 
+// alert("Please answer Y or N"); // determineUppercase(); 
+// }else if (uppercaseCheck === "yes" || uppercaseCheck ==="y"){ 
+// uppercaseCheck = true; 
+// return uppercaseCheck; 
+// }else if (uppercaseCheck === "no" || uppercaseCheck ==="n"){ 
+// uppercaseCheck = false; // return uppercaseCheck; 
+// }else { 
+// alert("Please answer Y or N");
+// determineUppercase(); 
+// }
 
-  //if they didn't return getCriteria()
-
-  return characters
+if (uppercaseCheck){ 
+characters+=lowercaseChar; 
 }
+return uppercaseCheck;
+} 
 
-function generatePassword(){
-  //get certain characters
-  //ask if they want certain characters
-  // Ask for the password length
-  var passwordLength = getLength()
-  console.log(passwordLength)
-
-  var passwordBase = getCriteria()
-
-  console.log("HELlo")
-  //Ask for confirmation of which characters to use
-
-
-  var finalPassword = ""
-
-
-  return finalPassword
-}
-
-// Get references to the #generate element
-var generateBtn = document.querySelector("#generate");
-
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-e18f095 ("updated criteria")
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+//Function used to determine whether the user wants to include numbers in the password 
+function determineNumbers(){ 
+  numberCheck = confirm("Do you want to include numbers in your password? (Y/N)"); 
+  // numberCheck = numberCheck.toLowerCase(); 
+  // if (numberCheck === null || numberCheck === ""){ 
+    // alert("Please answer Y or N"); 
+    // determineNumbers(); 
+    // }else if (numberCheck === "yes" || numberCheck ==="y"){ 
+      // numberCheck = true; 
+      // return numberCheck; 
+      // }else if (numberCheck === "no" || numberCheck ==="n"){ 
+        // numberCheck = false; 
+        // return numberCheck; 
+        // }else { 
+          // alert("Please answer Y or N"); 
+          // determineNumbers(); 
+          // } 
+          if (numberCheck){ characters+=numberschar; 
+        } return numberCheck; 
 }
